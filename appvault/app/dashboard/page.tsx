@@ -2,25 +2,26 @@ import Link from 'next/link';
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-white p-10">
-      <div className="max-w-4xl mx-auto">
-        <Link href="/" className="text-sm font-semibold text-gray-400 hover:text-gray-900 transition-colors">
-          ← Back to Home
+    <div className="min-h-screen bg-[#050505] p-10 text-white">
+      <div className="max-w-5xl mx-auto">
+        <Link href="/" className="text-sm font-medium text-gray-500 hover:text-white transition-colors">
+          ← Back
         </Link>
         
-        <h2 className="text-4xl font-black mt-6 mb-10 tracking-tight">Dashboard Installer</h2>
+        <h2 className="text-5xl font-black mt-8 mb-12 tracking-tight">Dashboard.</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Card 1 */}
-          <div className="p-8 border border-gray-100 rounded-3xl bg-gray-50 hover:border-rose-200 hover:shadow-lg transition-all cursor-pointer">
-            <h3 className="font-bold text-xl mb-2">System Apps</h3>
-            <p className="text-gray-500">Kelola dan update aplikasi sistem lu dengan mudah.</p>
+          {/* Card Glassmorphism */}
+          <div className="p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all cursor-pointer">
+            <div className="w-12 h-12 bg-rose-500/20 rounded-2xl mb-6"></div>
+            <h3 className="font-bold text-2xl mb-2">System Apps</h3>
+            <p className="text-gray-400">Optimize and manage your core system processes.</p>
           </div>
           
-          {/* Card 2 */}
-          <div className="p-8 border border-gray-100 rounded-3xl bg-gray-50 hover:border-rose-200 hover:shadow-lg transition-all cursor-pointer">
-            <h3 className="font-bold text-xl mb-2">Game Library</h3>
-            <p className="text-gray-500">Kumpulan instalasi game favorit dalam satu klik.</p>
+          <div className="p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all cursor-pointer">
+            <div className="w-12 h-12 bg-indigo-500/20 rounded-2xl mb-6"></div>
+            <h3 className="font-bold text-2xl mb-2">Game Library</h3>
+            <p className="text-gray-400">Access your curated game collection instantly.</p>
           </div>
         </div>
       </div>
