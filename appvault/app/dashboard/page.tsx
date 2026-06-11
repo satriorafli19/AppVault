@@ -1,30 +1,36 @@
+'use client';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-[#050505] p-10 text-white">
-      <div className="max-w-5xl mx-auto">
-        <Link href="/" className="text-sm font-medium text-gray-500 hover:text-white transition-colors">
-          ← Back
-        </Link>
+    <main className="min-h-screen bg-[#050505] text-white p-10">
+      <div className="max-w-4xl mx-auto">
+        <Link href="/" className="text-gray-500 hover:text-white transition-colors">← Back</Link>
         
-        <h2 className="text-5xl font-black mt-8 mb-12 tracking-tight">Dashboard.</h2>
-        
+        <motion.h2 
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+          className="text-5xl font-black mt-8 mb-12"
+        >
+          Dashboard
+        </motion.h2>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Card Glassmorphism */}
-          <div className="p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all cursor-pointer">
-            <div className="w-12 h-12 bg-rose-500/20 rounded-2xl mb-6"></div>
-            <h3 className="font-bold text-2xl mb-2">System Apps</h3>
-            <p className="text-gray-400">Optimize and manage your core system processes.</p>
-          </div>
-          
-          <div className="p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all cursor-pointer">
-            <div className="w-12 h-12 bg-indigo-500/20 rounded-2xl mb-6"></div>
-            <h3 className="font-bold text-2xl mb-2">Game Library</h3>
-            <p className="text-gray-400">Access your curated game collection instantly.</p>
-          </div>
+          {[
+            { title: "System Apps", desc: "Manage core system." },
+            { title: "Game Library", desc: "Launch your games." }
+          ].map((item, i) => (
+            <motion.div 
+              key={i}
+              whileHover={{ y: -10 }}
+              className="p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg cursor-pointer"
+            >
+              <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+              <p className="text-gray-400">{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
