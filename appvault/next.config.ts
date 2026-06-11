@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Ini buat matiin fitur Next.js yang mencoba meng-override file static
+  output: 'standalone', 
 };
 
 export default nextConfig;
