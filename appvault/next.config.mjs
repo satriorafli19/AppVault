@@ -1,6 +1,4 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
+const nextConfig = {
   output: 'export', // Ini kunci biar Vercel nggak error
   images: {
     unoptimized: true, // Biar nggak error masalah gambar
